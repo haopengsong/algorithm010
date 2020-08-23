@@ -62,33 +62,31 @@
         - 1、通过完全二叉树来实现
         - 2、树中任意节点的值总是大于等于其子节点的值
    - 二叉堆实现细节：
-		  - 1. 通过数组实现
-		  - 2. 数组中各索引i所对应的节点：
-			  - 索引i的左孩子：2*i + 1
-			  - 索引i的右孩子：2*i + 2
-			  - 索引i的父节点是floor（（i-1）/2）
-      - 3. 二叉堆insert插入操作
-	      - 新元素一律先插入到堆的底部
+	- 1. 通过数组实现
+	- 2. 数组中各索引i所对应的节点：
+		- 索引i的左孩子：2*i + 1
+		- 索引i的右孩子：2*i + 2
+		- 索引i的父节点是floor（（i-1）/2）
+      	- 3. 二叉堆insert插入操作
+	  - 新元素一律先插入到堆的底部
     	  - 依次向上调整整个堆的结构（一直到根即可）heapify-up
-      - 4. delete max删除堆顶操作
-        - 为了保证堆一直保持一个完全二叉树的形态，此时需要将堆尾元素替换到顶部（等价于堆顶元素被替代删除掉）
-        - 依次从顶部向下调整整个堆的结构（一直到堆尾即可）heapify-down
-
-		  - 5. 堆的实现代码：
-		    - [https://shimo.im/docs/Lw86vJzOGOMpWZz2/read]
-		
-		  - 6. heap sort
-		    - [https://www.geeksforgeeks.org/heap-sort/]
--	5）图:
-		- 表示:adjacency matrix；adjacency list;
-		- 常用bfs，dfs:
-			  - 重点: 使用visited = set（）记录已经遍历过的点
-		- 拓扑排序:
-		  - [https://zhuanlan.zhihu.com/p/34871092]
-		- Dijkstra: 
-        - [https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158]
-		- minimum spanning tree:
-        - [https://www.bilibili.com/video/av84820276?from=search&seid=17476598104352152051]
+      	- 4. delete max删除堆顶操作
+        	- 为了保证堆一直保持一个完全二叉树的形态，此时需要将堆尾元素替换到顶部（等价于堆顶元素被替代删除掉）
+        	- 依次从顶部向下调整整个堆的结构（一直到堆尾即可）heapify-down
+	- 5. 堆的实现代码：
+	  - [https://shimo.im/docs/Lw86vJzOGOMpWZz2/read]
+	- 6. heap sort
+	  - [https://www.geeksforgeeks.org/heap-sort/]
+- 5）图:
+	- 表示:adjacency matrix；adjacency list;
+	- 常用bfs，dfs:
+		- 重点: 使用visited = set（）记录已经遍历过的点
+	- 拓扑排序:
+		- [https://zhuanlan.zhihu.com/p/34871092]
+	- Dijkstra: 
+        	- [https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158]
+	- minimum spanning tree:
+        	- [https://www.bilibili.com/video/av84820276?from=search&seid=17476598104352152051]
 			
 #### week3
 - 递归
