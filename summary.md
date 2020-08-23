@@ -1,32 +1,30 @@
 ### 总结：
 紧张愉快的两个月的时间一转眼就过去了，这期间获益良多，老师的讲解配合精选的题目对编程能力的提升有很大帮助。数据结构与算法是难点也是重点，要继续保持学习的状态，坚持做题，不断巩固知识点。
-#### Week1
-1.  
+#### Week1  
 切题四件套：
   - clarification, 
   - possible solutions (compare time/space, optimal), 
   - repeat coding, 
   - test cases
 ##### 五遍刷题 
-
-2. 时间复杂度
+时间复杂度
 	- 1）二叉树遍历：前中后o（n）
 	- 2）图的遍历：o（n）
 	- 3）dfs，bfs：o（n）
 	- 4）二分查找：o(logn)
-3. array 
+array 
 	- 1）增加元素，中间插入要移动后面的o（n）
 	- 2）删除元素，中间删除要把后面的前移o(n)
-4. linked list
+linked list
 	- 1）复杂度：
 		 - Prepend o(1)	Append o(1) insert o(1) delete o(1) Lookup o(n)
-5. skip list : 升维，空间换时间
+skip list : 升维，空间换时间
 	- 1）只能用于链表里的元素有序的情况
 	- 2）对标替代平衡树和二分查找
 	- 3）插入 删除 搜索 都是log n
 	- 4）空间复杂度o（n）
 	
-6. 
+ADT: 
  - Stack：先入后出；添加，删除皆为o（1）
  - Queue：先入先出；添加，删除皆为o（1）		
  - Deque: 两端都可以进出的queue；插入删除都是o（1）查询都为o（n）
@@ -35,22 +33,22 @@
     - 底层实现多样+复杂：heap，bst，treap
 
 #### Week2
-- 1) hash table
+- hash table
 	- 根据关键码值（key value）而直接进行访问的数据结构
 	- 通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度
 	- 映射函数叫hash function散列函数，存放记录的数组叫做哈希表
 	- 类比：电话号码表，用户信息表
 	- 一种collision解决方案：将键值相同的元素用链表连接
 	- 作业：看懂hashmap的get，put，写个总结
-- 2）回顾做题四件套：clarification，possible solutions，coding，test cases
-- 3）tree，binary tree，bst
+- 回顾做题四件套：clarification，possible solutions，coding，test cases
+- tree，binary tree，bst
 	- 二叉树的遍历：
 	- 二叉搜索树 查询 插入：logn复杂度
 	- 二叉搜索树 删除：找到第一个大于该节点的数来替换要删除的节点（右子树最小值）
 	- 二叉搜索树 查找worst case：当树从根节点开始只有右子树，此时树变成了链表，查找为o（n）
 	- 思考：二叉树解法为何都是递归的？
 
-- 4) 堆heap，二叉堆binary heap	
+- 堆heap，二叉堆binary heap	
 	 - 可以迅速找到一堆数中的最大或者最小值的数据结构
 	 - time：
         - find-max: o(1)
@@ -59,25 +57,25 @@
 	 - 二叉堆只是堆的一种实现，比较简单，但time复杂度不是最好，还有很多其他更好的实现，比如fibonacci堆
 	
 	 - 二叉堆（大顶）性质：
-        - 1、通过完全二叉树来实现
-        - 2、树中任意节点的值总是大于等于其子节点的值
+        	- 通过完全二叉树来实现
+        	- 树中任意节点的值总是大于等于其子节点的值
    - 二叉堆实现细节：
-	- 1. 通过数组实现
-	- 2. 数组中各索引i所对应的节点：
+	- 通过数组实现
+	- 数组中各索引i所对应的节点：
 		- 索引i的左孩子：2*i + 1
 		- 索引i的右孩子：2*i + 2
 		- 索引i的父节点是floor（（i-1）/2）
-      	- 3. 二叉堆insert插入操作
+      	- 二叉堆insert插入操作
 	  - 新元素一律先插入到堆的底部
     	  - 依次向上调整整个堆的结构（一直到根即可）heapify-up
-      	- 4. delete max删除堆顶操作
+      	- delete max删除堆顶操作
         	- 为了保证堆一直保持一个完全二叉树的形态，此时需要将堆尾元素替换到顶部（等价于堆顶元素被替代删除掉）
         	- 依次从顶部向下调整整个堆的结构（一直到堆尾即可）heapify-down
-	- 5. 堆的实现代码：
+	- 堆的实现代码：
 	  - [https://shimo.im/docs/Lw86vJzOGOMpWZz2/read]
-	- 6. heap sort
+	- heap sort
 	  - [https://www.geeksforgeeks.org/heap-sort/]
-- 5）图:
+- 图:
 	- 表示:adjacency matrix；adjacency list;
 	- 常用bfs，dfs:
 		- 重点: 使用visited = set（）记录已经遍历过的点
@@ -167,7 +165,7 @@
   				- 二维路径：opt[i,j] = opt[i+1][j] + opt[i][j+1] （且判断a[i,j]是否空地）
 
 #### week7: 树的性质;前中后序遍历
-- 1) 字典树
+- 字典树
     - [https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/shi-xian-trie-qian-zhui-shu-by-leetcode/]
 	- 性质:
 		- 1. 节点本身不存单词，只存要去到的路径上的这个路径所代表的字符
@@ -175,45 +173,42 @@
 		- 3. 每个节点的所有子节点路径代表的字符都不相同
 		  - 节点可以存储额外信息（例如该节点被访问过的频次）
       - 核心思想: 空间换时间，利用字符串的公共前缀来降低查询时间的开销以达到提高效率的目的
-
-      - todo: 实现trie
-	- 2）并查集, union find
-		 - 组团+配对, 用于快速判断某两个个体是否在同一个集合中
-		 - group or not? a 和 b是不是朋友
-		 - 实现过程：
-			- 一开始各自节点各自为一个集合
+- 并查集, union find
+	- 组团+配对, 用于快速判断某两个个体是否在同一个集合中
+	- group or not? a 和 b是不是朋友
+	- 实现过程：
+		- 一开始各自节点各自为一个集合
     		- 随着各集合节点的增加，不断地扩充集合树
     		- find: 找该集合的领头元素，不断的往上跳跃直到parent【i】=i
 			- 路径压缩: 让集合中的各个节点直接跟老大连接，方便find	
-		  - todo: 实现union find
-		
-	- 3）高级搜索
-		 - 数形结合，状态树
-		 - 剪枝
-		 - 回溯
-			- 递归+分治+试错
-      - 回溯法采用试错的思想，它尝试分步的去解决一个问题，在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答时，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案
-      - 双向bfs (单词接龙1，2)
-	  - 启发式搜索（a*）heuristic search
-		- 智能搜索基于bfs
-			 - 根据某一项条件，我们来不断优化搜索的方向
-			 - 一边搜索，一边思考
-			 - 通过优先级不断找要找的点，先用优先级高的拿出来搜索即可
-         - 利用启发函数h（n），（估价函数）来找到我们需要找的点，h（n）会返回一个非负实数，也可以认为是从节点n到目标节点路径的估计成本
-	- 4）红黑树和avl树
-		 - 复习树的遍历：
-			 - preorder：根左右
-			 - inorder：左根右
-			 - postorder：左右根
-		- binary search tree **看create, delete, insert代码**
+		 
+- 高级搜索
+	- 数形结合，状态树
+	- 剪枝
+	- 回溯
+	- 递归+分治+试错
+     - 回溯法采用试错的思想，它尝试分步的去解决一个问题，在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答时，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案
+     - 双向bfs (单词接龙1，2)
+     - 启发式搜索（a*）heuristic search
+	- 智能搜索基于bfs
+	- 根据某一项条件，我们来不断优化搜索的方向
+	- 一边搜索，一边思考
+	- 通过优先级不断找要找的点，先用优先级高的拿出来搜索即可
+        - 利用启发函数h（n），（估价函数）来找到我们需要找的点，h（n）会返回一个非负实数，也可以认为是从节点n到目标节点路径的估计成本
+- 红黑树和avl树
+	- 复习树的遍历：
+		- preorder：根左右
+		- inorder：左根右
+		- postorder：左右根
+	- binary search tree **看create, delete, insert代码**
         	- 二叉搜索树的中序遍历都是升序排列的
-			  	- 增加，查找，o（logn），worst case o（n）（链表）
-        		- 删除
-        		- bst保证性能的关键是
+		- 增加，查找，o（logn），worst case o（n）（链表）
+        	- 删除
+        	- bst保证性能的关键是
       		- 保证二维维度
     	 - balanced
-      			- 2,3 tree, avl tree, b-tree, red-black tree, splay tree
-     - avl			
+      		- 2,3 tree, avl tree, b-tree, red-black tree, splay tree
+	- avl			
 		- 通过旋转来使得平衡因子保持在1范围内
 			- 右右子树 = 左旋转
 			- 左左子树 = 右旋转
@@ -233,11 +228,11 @@
         - red black trees are used in most of the language libraries like map, multimap, multiset in c++ whereas avl trees are used in databases where faster retrievals are required，database读多写少
         - 查询插入一半一半可以用红黑树，因为简洁好实现
 #### week 8:
-- 1) 位运算
-		- 2，10进制转换:对2取余
+- 位运算
+		- (2，10)进制转换:对2取余
 		  	- 补零
 		- 异或：相同为0，不同为1，不进位加法
-- 2) 布隆过滤器，bloom filter
+- 布隆过滤器，bloom filter
 	  - 一个很长的二进制向量和一系列随机映射函数
 	  - 一开始二进制位数组全为零
     - 映射函数决定了进来的元素要分成几个二进制位，每映射一次就将对应的二进制位变成1
@@ -249,7 +244,7 @@
     - 布隆过滤器只是挡在机器前面快速查询的缓存，真正要确定元素一定存在就必须访问机器的存储器（数据库）
     - 应用
     - 实现
-- 3）LRU – Cache
+- LRU – Cache
 	 - cache缓存：
 		 - 记忆，钱包，代码模块
 	 - lru，least recently used，最近最少使用的，放在最后淘汰
@@ -257,7 +252,7 @@
 		    - [https://leetcode-cn.com/problems/lru-cache/%23/]
 	  - LFU : least frequently used, 最少用的频次最少的淘汰
 
-- 3) 排序算法
+- 排序算法
 	  - [https://www.cnblogs.com/onepixel/p/7674659.html]
   	- 重点看nlogn排序：堆排序，快速排序，归并排序
 	- 初级排序n^2: 会写
