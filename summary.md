@@ -91,45 +91,44 @@
         - [https://www.bilibili.com/video/av84820276?from=search&seid=17476598104352152051]
 			
 #### week3
-- 1) 递归
+- 递归
       - 模版
       - 注意
-		      - 利用数学归纳法
-  		    - 不要人肉递归
-		      - 找最近最简单方法, 将其拆解成可重复解决的问题（重复子问题）
-- 2）分治, 回溯
-	    - 分治:大问题由细的子问题组成
-	    - 模版:
-		        - 1）Base case
-		        - 2）处理数据 + 准备subproblem
-		        - 3）做计算/处理subproblem
-		        - 4）返回结果
-	    - 回溯:试错思想
-	      - 注意:熟悉牛顿迭代法
-          	  - [http://www.voidcn.com/article/p-eudisdmk-zm.html]
+		   - 利用数学归纳法
+  		   - 不要人肉递归
+		   - 找最近最简单方法, 将其拆解成可重复解决的问题（重复子问题）
+- 分治回溯
+	 - 分治:大问题由细的子问题组成
+	 - 模版:
+		 - Base case
+		 - 处理数据 + 准备subproblem
+		 - 做计算/处理subproblem
+		 - 返回结果
+	 - 回溯:试错思想
+	     - 注意:熟悉牛顿迭代法
+          	 - [http://www.voidcn.com/article/p-eudisdmk-zm.html]
             
 #### Week4：DFS/BFS 遍历
 
-- 1) DFS深度优先
-	  - 遍历顺序：一冲到底 stack
-		  - 树
-		  - 图
-	
-    - 递归写法：
-	  - 迭代写法：自主维护一个stack来模拟系统的stack
+- DFS深度优先
+	 - 遍历顺序：一冲到底 stack
+		- 树
+		- 图
+     - 递归写法：
+	 - 迭代写法：自主维护一个stack来模拟系统的stack
 		
-- 2) BFS广度优先
-	  - 遍历顺序：层层展开 queue
-	  - 树
+- BFS广度优先
+	- 遍历顺序：层层展开 queue
+	- 树
     - 写法：维护一个queue
-- 3）贪心算法
+- 贪心算法
     - 局限：每一步选取结果只按一种策略，无法保证最优
     - 定义： 贪心算法是一种在每一步选择中都采取在当前状态下最好或最优（最有利）的选择，从而希望导致结果是全局最好或最优的算法
     - 与动态规划区别：贪心对子问题的解决方案（解决子问题的方案一旦设定，则每次都会运用相同的方案）不能回退；动规则会保存以前的运算结果，并可以根据以前结果对当前进行选择，有回退功能
     - 主要解决最优化问题
         - 适用场景：问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解；这种子问题最优解称为最优子结构；
 
-- 4）二分查找
+- 二分查找
 	 - 使用前提 为什么能用？？？：
 		  - 1）目标函数单调性
 		  - 2）存在上下界
@@ -137,7 +136,7 @@
 	 - 代码模版：
 		  - 牛顿迭代法
     		[http://www.matrix67.com/blog/archives/361]
-		- 四步做题：
+	- 四步做题：
       - 审题（细节，边界条件，input，output）；
       - 考虑所有解法得出最优法；
       - 写代码；
@@ -145,105 +144,101 @@
 
 #### week5：midterm
 #### week6
-	- 1) 牢记递归模版
-		  - 终止条件
-		  - 处理当前层逻辑
-		  - 下探到下一层
-		  - 恢复到下一层
+- 牢记递归模版
+	- 终止条件
+	- 处理当前层逻辑
+	- 下探到下一层
+	- 恢复到下一层
 	
-	- 2）分治代码模版
+- 分治代码模版
 
-  - 3）一般思路：找到最近最简方法，将问题拆解成可重复解决的问题
-		  - 数学归纳法
-		  - 寻找重复性-〉计算机指令集（if else，for，recursion）
-  -	4）dp = 分治 + 最优子结构
-			  - 分治过程中，每一步不需要保存所有状态，只需要保存最优的状态
-			  - 动态规划 和 递归或者分治没有根本上的区别（关键看有无最优子结构）
-				  - 共性：找到重复子问题
-				  - 差异性：最优子结构，中途可以淘汰次优解
-			  - 自底向上写循环：
-			  - dp关键点：
-				  - 最优子结构 opt[n] = best_of( opt[n-1], opt[n-2], …)
-				  - 储存中间状态：opt[i]
-				  - 递推公式（状态转移方程）
-					    - Fib: opt[i] = opt[i-2] + opt[i-2]
-  					  - 二维路径：opt[i,j] = opt[i+1][j] + opt[i][j+1] （且判断a[i,j]是否空地）
+  - 一般思路：找到最近最简方法，将问题拆解成可重复解决的问题
+	- 数学归纳法
+	- 寻找重复性-〉计算机指令集（if else，for，recursion）
+- **dp** = 分治 + 最优子结构
+	- 分治过程中，每一步不需要保存所有状态，只需要保存最优的状态
+	- 动态规划 和 递归或者分治没有根本上的区别（关键看有无最优子结构）
+		- 共性：找到重复子问题
+		- 差异性：最优子结构，中途可以淘汰次优解
+		- 自底向上写循环：
+		- dp关键点：
+			- 最优子结构 opt[n] = best_of( opt[n-1], opt[n-2], …)
+			- 储存中间状态：opt[i]
+			- 递推公式（状态转移方程）
+				- Fib: opt[i] = opt[i-2] + opt[i-2]
+  				- 二维路径：opt[i,j] = opt[i+1][j] + opt[i][j+1] （且判断a[i,j]是否空地）
 
 #### week7: 树的性质;前中后序遍历
-	- 1)字典树
-      [https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/shi-xian-trie-qian-zhui-shu-by-leetcode/]
-		  - 性质:
-			  - 1. 节点本身不存单词，只存要去到的路径上的这个路径所代表的字符
-			  - 2. 从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串
-			  - 3. 每个节点的所有子节点路径代表的字符都不相同
-			
+- 1) 字典树
+    - [https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/shi-xian-trie-qian-zhui-shu-by-leetcode/]
+	- 性质:
+		- 1. 节点本身不存单词，只存要去到的路径上的这个路径所代表的字符
+		- 2. 从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串
+		- 3. 每个节点的所有子节点路径代表的字符都不相同
 		  - 节点可以存储额外信息（例如该节点被访问过的频次）
       - 核心思想: 空间换时间，利用字符串的公共前缀来降低查询时间的开销以达到提高效率的目的
 
       - todo: 实现trie
 	- 2）并查集, union find
-		  - 组团+配对, 用于快速判断某两个个体是否在同一个集合中
-		  - group or not? a 和 b是不是朋友
-		  - 实现过程：
-			    - 一开始各自节点各自为一个集合
-    			- 随着各集合节点的增加，不断地扩充集合树
-    			- find: 找该集合的领头元素，不断的往上跳跃直到parent【i】=i
-			    - 路径压缩: 让集合中的各个节点直接跟老大连接，方便find	
+		 - 组团+配对, 用于快速判断某两个个体是否在同一个集合中
+		 - group or not? a 和 b是不是朋友
+		 - 实现过程：
+			- 一开始各自节点各自为一个集合
+    		- 随着各集合节点的增加，不断地扩充集合树
+    		- find: 找该集合的领头元素，不断的往上跳跃直到parent【i】=i
+			- 路径压缩: 让集合中的各个节点直接跟老大连接，方便find	
 		  - todo: 实现union find
 		
 	- 3）高级搜索
-		  - 数形结合，状态树
-		  - 剪枝
-		  - 回溯
-			  - 递归+分治+试错
+		 - 数形结合，状态树
+		 - 剪枝
+		 - 回溯
+			- 递归+分治+试错
       - 回溯法采用试错的思想，它尝试分步的去解决一个问题，在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答时，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案
       - 双向bfs (单词接龙1，2)
-		  - 启发式搜索（a*）heuristic search
-			- 智能搜索基于bfs
-			    - 根据某一项条件，我们来不断优化搜索的方向
-			    - 一边搜索，一边思考
-			    - 通过优先级不断找要找的点，先用优先级高的拿出来搜索即可
-          - 利用启发函数h（n），（估价函数）来找到我们需要找的点，h（n）会返回一个非负实数，也可以认为是从节点n到目标节点路径的估计成本
+	  - 启发式搜索（a*）heuristic search
+		- 智能搜索基于bfs
+			 - 根据某一项条件，我们来不断优化搜索的方向
+			 - 一边搜索，一边思考
+			 - 通过优先级不断找要找的点，先用优先级高的拿出来搜索即可
+         - 利用启发函数h（n），（估价函数）来找到我们需要找的点，h（n）会返回一个非负实数，也可以认为是从节点n到目标节点路径的估计成本
 	- 4）红黑树和avl树
-		  - 复习树的遍历：
-			  - preorder：根左右
-			  - inorder：左根右
-			  - postorder：左右根
-			- binary search tree
-        - 二叉搜索树的中序遍历都是升序排列的
-			  - 增加，查找，o（logn），worst case o（n）（链表）
-        - 删除
-        - bst保证性能的关键是
-      	- 保证二维维度
-    	  - balanced
-      		- 2,3 tree, avl tree, b-tree, red-black tree, splay tree
+		 - 复习树的遍历：
+			 - preorder：根左右
+			 - inorder：左根右
+			 - postorder：左右根
+		- binary search tree **看create, delete, insert代码**
+        	- 二叉搜索树的中序遍历都是升序排列的
+			  	- 增加，查找，o（logn），worst case o（n）（链表）
+        		- 删除
+        		- bst保证性能的关键是
+      		- 保证二维维度
+    	 - balanced
+      			- 2,3 tree, avl tree, b-tree, red-black tree, splay tree
      - avl			
-			  - 通过旋转来使得平衡因子保持在1范围内
-				- 右右子树 = 左旋转
-				- 左左子树 = 右旋转
-				- 左右子树 = 左右旋转
-				- 右左子树 = 右左旋转
-				- avl总结：
-					  - 1. 平衡二叉搜索树
-					  - 2. 每个结点存balance factor = 【-1，0，1】
-					  - 3. 四种旋转操作
-  					- 不足：结点需要存储额外信息，且调整次数频繁，维护高
-
+		- 通过旋转来使得平衡因子保持在1范围内
+			- 右右子树 = 左旋转
+			- 左左子树 = 右旋转
+			- 左右子树 = 左右旋转
+			- 右左子树 = 右左旋转
+			- avl总结：
+				- 1. 平衡二叉搜索树
+				- 2. 每个结点存balance factor = 【-1，0，1】
+				- 3. 四种旋转操作
+  				- 4. 不足：结点需要存储额外信息，且调整次数频繁，维护高
       - red black tree（近似平衡二叉树，不需要常维护）
           - 关键性质：从根到叶子的最长的可能路径不多于最短的可能路径的两倍长（高度差小于两倍）
-			
-			- 概述，面试重点：
+	 - avl, red black 概述，面试重点：
         - avl trees provide faster lookups than red black trees because they are more strictly balanced
         - red black trees provide faster insertion and removal operations than avl trees as fewer rotations are done due to relatively relaxed balancing
         - avl trees store balance factors or heights with each node, thus requires storage for an integer per node whereas red black tree requires only 1-bit (red or black) information per node
         - red black trees are used in most of the language libraries like map, multimap, multiset in c++ whereas avl trees are used in databases where faster retrievals are required，database读多写少
         - 查询插入一半一半可以用红黑树，因为简洁好实现
-
 #### week 8:
 - 1) 位运算
-	- 2，10进制转换:对2取余
-		  - 补零
-	- 异或：相同为0，不同为1，不进位加法
+		- 2，10进制转换:对2取余
+		  	- 补零
+		- 异或：相同为0，不同为1，不进位加法
 - 2) 布隆过滤器，bloom filter
 	  - 一个很长的二进制向量和一系列随机映射函数
 	  - 一开始二进制位数组全为零
@@ -257,54 +252,54 @@
     - 应用
     - 实现
 - 3）LRU – Cache
-	  - cache缓存：
-		  - 记忆，钱包，代码模块
-	  - lru，least recently used，最近最少使用的，放在最后淘汰
-	  - lru实现：
+	 - cache缓存：
+		 - 记忆，钱包，代码模块
+	 - lru，least recently used，最近最少使用的，放在最后淘汰
+	 - lru实现：
 		    - [https://leetcode-cn.com/problems/lru-cache/%23/]
 	  - LFU : least frequently used, 最少用的频次最少的淘汰
 
 - 3) 排序算法
 	  - [https://www.cnblogs.com/onepixel/p/7674659.html]
-  - 重点看nlogn排序：堆排序，快速排序，归并排序
+  	- 重点看nlogn排序：堆排序，快速排序，归并排序
 	- 初级排序n^2: 会写
-		  - 选择排序：每次找最小值，然后放到待排序数组的起始位置
-	    - 插入排序：从前到后逐步构建有序序列；对未排序数据，在已排序序列中从后向	前扫描，找到相应位置并插入
-      - 冒泡排序：每一轮两两交换都把最大的元素送到到最后（冒泡出来），与选择排序相反
+		 - 选择排序：每次找最小值，然后放到待排序数组的起始位置
+	     - 插入排序：从前到后逐步构建有序序列；对未排序数据，在已排序序列中从后向	前扫描，找到相应位置并插入
+      	 - 冒泡排序：每一轮两两交换都把最大的元素送到到最后（冒泡出来），与选择排序相反
 	- 高级排序nlogn：会写
-		  - 快速排序quick sort
-          - 数组取标杆pivot，将小元素放在pivot左边，大元素放在pivot右边，然后再依次对右边和左边的子数组继续快排，直到整个序列有序
-		  - 归并排序merge sort
-			    - 把长度为n的输入序列分成两个长度为n/2的子序列
-			    - 对这两个子序列分别采用归并排序
-			    - 将两个排序好的子序列合并成一个最终的排序序列
+		 - 快速排序quick sort
+         - 数组取标杆pivot，将小元素放在pivot左边，大元素放在pivot右边，然后再依次对右边和左边的子数组继续快排，直到整个序列有序
+		 - 归并排序merge sort
+			  - 把长度为n的输入序列分成两个长度为n/2的子序列
+			  - 对这两个子序列分别采用归并排序
+			  - 将两个排序好的子序列合并成一个最终的排序序列
 		  - 堆排序 heap sort
 	        - [https://courses.cs.washington.edu/courses/cse373/16wi/Hashing/visualization/HeapSort.html]
-			    - 堆插入logn，取最大最小o（1）
+			- 堆插入logn，取最大最小o（1）
 	- 特殊排序
   
 #### week9
 - 高级动态规划
-- 复习递归
-- 复习分治
-	- 分治典型：归并排序
-	- 要点是找到重复子结构，最近重复性
-- 动态规划：
-	- 分治（找重复子问题） + 最优子结构，中途淘汰次优解
-	- dp最后一步的状态 = 前一步子问题的最优解
-	- 多维dp，每个维度代表了问题的一个状态，把问题抽象化
-	- 股票买卖：
-- 高阶动态规划 
-	- 编辑距离：
-		- 增加和删除的情况是相通的
-	- 字符串
-		- python，java中的string为immutable，不可变，每次改变string都创建了新string
-		- c++中的string为mutable，要改为不可变就加const
-		- java中字符串的比较
-			- 虽然x，y的内容一样，但是二者是不同的内存地址，所以==比较会false
-- 字符串匹配算法
-	- 暴力法 ,o（mn）
-	- rabin-karp
-	- kmp
+	- 复习递归
+	- 复习分治
+		  - 分治典型：归并排序
+	    - 要点是找到重复子结构，最近重复性
+	- 动态规划：
+		  - 分治（找重复子问题） + 最优子结构，中途淘汰次优解
+		  - dp最后一步的状态 = 前一步子问题的最优解
+		  - 多维dp，每个维度代表了问题的一个状态，把问题抽象化
+		  - 股票买卖：
+  	- 高阶动态规划 
+	    - 编辑距离：
+		  - 增加和删除的情况是相通的
+- 字符串
+	- python，java中的string为immutable，不可变，每次改变string都创建了新string
+	- c++中的string为mutable，要改为不可变就加const
+	- java中字符串的比较
+		- 虽然x，y的内容一样，但是二者是不同的内存地址，所以==比较会false
+	- 字符串匹配算法
+		- 暴力法 ,o（mn）
+		- rabin-karp
+		- kmp
 		
 
