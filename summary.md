@@ -7,18 +7,18 @@
   - repeat coding, 
   - test cases
 ##### 五遍刷题 
-时间复杂度
-	- 1）二叉树遍历：前中后o（n）
-	- 2）图的遍历：o（n）
-	- 3）dfs，bfs：o（n）
-	- 4）二分查找：o(logn)
-array 
+- 时间复杂度:
+ - 1）二叉树遍历：前中后o（n）
+ - 2）图的遍历：o（n）
+ - 3）dfs，bfs：o（n）
+ - 4）二分查找：o(logn)
+ - array: 
 	- 1）增加元素，中间插入要移动后面的o（n）
 	- 2）删除元素，中间删除要把后面的前移o(n)
-linked list
+ - linked list:
 	- 1）复杂度：
-		 - Prepend o(1)	Append o(1) insert o(1) delete o(1) Lookup o(n)
-skip list : 升维，空间换时间
+		- Prepend o(1)	Append o(1) insert o(1) delete o(1) Lookup o(n)
+ - skip list : 升维，空间换时间
 	- 1）只能用于链表里的元素有序的情况
 	- 2）对标替代平衡树和二分查找
 	- 3）插入 删除 搜索 都是log n
